@@ -78,7 +78,7 @@ export default function App() {
   useEffect(() => {
     if (screen !== 0) return;
 
-    const birthdayDate = new Date("2026-01-02T00:00:00");
+    const birthdayDate = new Date("2026-01-06T00:00:00");
 
     const timer = setInterval(() => {
       const diff = birthdayDate - new Date();
@@ -167,7 +167,13 @@ export default function App() {
             ))}
           </div>
 
-          <p className="pink">Crafting something magical… ✨</p>
+          <p className="opening-date">
+            🌸 The magic begins on <b>6 January 2026</b> 🌸
+          </p>
+          <p className="subtle">
+            Every second brings us closer ✨
+          </p>
+
         </div>
       )}
 

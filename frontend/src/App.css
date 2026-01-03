@@ -35,6 +35,35 @@ body {
   z-index: 2;
 }
 
+.opening-date {
+  font-size: clamp(25px, 3.5vw, 22px);
+  margin-top: 14px;
+  letter-spacing: 0.5px;
+  animation: glow 2.5s ease-in-out infinite;
+  color: #00ffff;
+}
+
+.subtle {
+  opacity: 0.75;
+  margin-top: 6px;
+  color: #ff7bdc;
+  font-size: 18px;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 6px rgba(255, 105, 180, 0.4);
+  }
+
+  50% {
+    text-shadow: 0 0 14px rgba(255, 105, 180, 0.9);
+  }
+
+  100% {
+    text-shadow: 0 0 6px rgba(255, 105, 180, 0.4);
+  }
+}
+
 .pink {
   color: #ff7bdc;
 }
