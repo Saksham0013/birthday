@@ -1,0 +1,445 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", cursive;
+}
+
+body {
+  background: radial-gradient(circle at top, #2b0033, #000);
+  color: white;
+  overflow: hidden;
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+.pink {
+  color: #ff7bdc;
+}
+
+.highlight {
+  color: #ff4d88;
+  font-weight: bold;
+}
+
+/* =========================
+   BUTTON
+========================= */
+button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(45deg, #ff4fd8, #ff85f1);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 77, 216, 0.4);
+}
+
+/* =========================
+   INTRO EMOJI
+========================= */
+.cute {
+  font-size: 100px;
+  line-height: 1;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+.countdown {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 24px 0;
+}
+
+.countdown-card {
+  background: #ffe4ef;
+  border-radius: 16px;
+  min-width: 80px;
+  padding: 14px 12px;
+  text-align: center;
+  perspective: 1000px;
+  box-shadow: 0 8px 18px rgba(255, 77, 136, 0.25);
+}
+
+.countdown-flip {
+  position: relative;
+  height: 44px;
+  transform-style: preserve-3d;
+}
+
+.countdown-front,
+.countdown-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #ff4d88;
+}
+
+.countdown-back {
+  transform: rotateX(180deg);
+}
+
+.countdown-card small {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* =========================
+   CAKE
+========================= */
+.simple-cake {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.cake-top {
+  width: 180px;
+  height: 50px;
+  background: #ff9ad5;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cake-body {
+  width: 180px;
+  height: 100px;
+  background: #c68642;
+  border-radius: 0 0 25px 25px;
+}
+
+.candle {
+  width: 12px;
+  height: 40px;
+  background: repeating-linear-gradient(45deg,
+      #ff4d4d,
+      #ff4d4d 5px,
+      #ffffff 5px,
+      #ffffff 10px);
+  border-radius: 4px;
+  position: relative;
+}
+
+.flame {
+  position: absolute;
+  top: -22px;
+  left: -6px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle, #fff, orange, red);
+  border-radius: 50%;
+  animation: flicker 0.15s infinite alternate;
+}
+
+@keyframes flicker {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* =========================
+   BALLOONS
+========================= */
+.balloons {
+  display: flex;
+  gap: 20px;
+}
+
+.balloon {
+  width: 60px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.b1 {
+  background: pink;
+}
+
+.b2 {
+  background: gold;
+}
+
+.b3 {
+  background: lightgreen;
+}
+
+.b4 {
+  background: skyblue;
+}
+
+.balloon-slot {
+  width: 60px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balloon-message-inside {
+  width: 60px;
+  height: 80px;
+  background: rgba(255, 123, 220, 0.25);
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: popMsg 0.4s ease;
+}
+
+@keyframes popMsg {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   FLIP MESSAGE CARDS
+========================= */
+.flip-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.flip-card {
+  width: 120px;
+  height: 160px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.flip-front {
+  background: linear-gradient(45deg, #ff5fd2, #9f5bff);
+  font-size: 40px;
+}
+
+.flip-back {
+  background: white;
+  color: #333;
+  transform: rotateY(180deg);
+  font-size: 14px;
+}
+
+/* =========================
+   LETTER / GIFT
+========================= */
+.envelope {
+  padding: 40px;
+  border: 3px solid pink;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.letter {
+  background: white;
+  height: auto;
+  width: 230px;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.gift {
+  font-size: 80px;
+  cursor: pointer;
+}
+
+.let {
+  background: white;
+  height: auto;
+  width: 300px;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* =========================
+   CANVAS CONFETTI + FIREWORKS
+========================= */
+.celebration-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================
+   AUTO MEMORIES SLIDESHOW
+========================= */
+.memory-view {
+  width: 260px;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 77, 216, 0.35);
+}
+
+.memory-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeSlide 0.8s ease;
+}
+
+.memory-view {
+  position: relative;
+  width: 90%;
+  max-width: 420px;
+  height: 420px;
+  overflow: hidden;
+}
+
+.memory-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+  .cute {
+    font-size: 80px;
+  }
+
+  .countdown-card {
+    min-width: 60px;
+    padding: 10px 8px;
+  }
+
+  .countdown-front,
+  .countdown-back {
+    font-size: 22px;
+  }
+
+  .flip-cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .flip-card {
+    width: 90px;
+    height: 130px;
+  }
+
+  .memory-view {
+    width: 220px;
+    height: 280px;
+  }
+}
