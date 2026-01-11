@@ -10,13 +10,13 @@ const PERSON_NAME = "Moti";
    MEMORIES (STABLE)
 ===================== */
 const MEMORIES = [
-  { type: "image", src: "/images/tanya 1.jpg" },
-  { type: "image", src: "/images/tanya 2.jpg" },
-  { type: "video", src: "/images/tanya 3.mp4" },
-  { type: "image", src: "/images/tanya 4.jpg" },
-  { type: "video", src: "/images/tanya 5.mp4" },
-  { type: "image", src: "/images/tanya 6.jpg" },
-  { type: "video", src: "/images/tanya 7.mp4" },
+  { type: "image", src: "/images/image 1.jpg" },
+  { type: "image", src: "/images/image 2.jpg" },
+  { type: "image", src: "/images/image 3.jpg" },
+  { type: "image", src: "/images/image 4.jpg" },
+  // { type: "video", src: "/images/tanya 5.mp4" },
+  { type: "image", src: "/images/image 5.jpg" },
+  // { type: "video", src: "/images/tanya 7.mp4" },
 ];
 
 export default function App() {
@@ -78,7 +78,7 @@ export default function App() {
   useEffect(() => {
     if (screen !== 0) return;
 
-    const birthdayDate = new Date("2026-01-06T00:00:00");
+    const birthdayDate = new Date("2026-01-13T00:00:00");
 
     const timer = setInterval(() => {
       const diff = birthdayDate - new Date();
@@ -148,7 +148,7 @@ export default function App() {
       {/* 1 Countdown */}
       {screen === 0 && (
         <div className="screen">
-          <h2 className="pink">Countdown to {PERSON_NAME}'s Day 💖</h2>
+          <h2 className="pinkplus">Countdown to {PERSON_NAME}'s Day 💖</h2>
 
           <div className="countdown">
             {[
@@ -168,11 +168,11 @@ export default function App() {
           </div>
 
           <p className="opening-date">
-            🌸 The magic begins on <b>6 January 2026</b> 🌸
+            🌸 The magic begins on <b>13 January 2026</b> 🌸
           </p>
-          <p className="subtle">
+          {/* <p className="subtle">
             Every second brings us closer ✨
-          </p>
+          </p> */}
 
         </div>
       )}
@@ -183,7 +183,7 @@ export default function App() {
           <div className="cute">🐻</div>
           <h1 className="pink">
             {PERSON_NAME} was born{" "}
-            <span className="highlight">20 years ago</span> today 💕
+            <span className="highlight">24 years ago</span> today 💕
           </h1>
           <button onClick={next}>🎁 Start the surprise</button>
         </div>

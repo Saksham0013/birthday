@@ -66,6 +66,12 @@ body {
 
 .pink {
   color: #ff7bdc;
+  font-size: 27px;
+}
+
+.pinkplus {
+  color: #ff7bdc;
+  font-size: 30px;
 }
 
 .highlight {
